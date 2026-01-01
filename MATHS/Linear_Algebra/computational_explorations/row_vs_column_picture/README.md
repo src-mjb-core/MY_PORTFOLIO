@@ -1,57 +1,78 @@
-## Row Picture vs Column Picture (Linear Algebra)
+## Row Picture and Column Picture — A Geometric View of Linear Systems
 
-This computational exploration is designed to help visualize one of the most important conceptual ideas in Linear Algebra:  
-**the difference between the row picture and the column picture of a system of linear equations**.
+This computational exploration is inspired by **Lecture 1: “The Geometry of Linear Equations”** and is designed to build intuition for solving linear systems by *seeing* them geometrically.
 
-The goal of this program is *not* to showcase advanced programming skills, but to support conceptual understanding through clear geometric visualization.
+The program visualizes **row picture** and **column picture** side by side, helping learners understand how the same system of equations can be interpreted in two fundamentally different—but equivalent—ways.
+
+The emphasis here is on *understanding*, not on algorithmic efficiency or original code authorship.
 
 ---
 
-## Conceptual Background
+## The Fundamental Problem
 
-Consider a system of linear equations written in matrix form:
+The central problem of linear algebra is to solve systems of linear equations written in matrix form:
 
+\[
 A x = b
+\]
 
-Depending on how we interpret this system, we get two complementary geometric viewpoints.
+Here:
+- \( A \) is the matrix of coefficients
+- \( x \) is the vector of unknowns
+- \( b \) is the right-hand-side vector
+
+This program focuses on the geometric meaning of this equation.
 
 ---
 
-### Row Picture
+## Three Complementary Viewpoints
 
-In the **row picture**, each equation is viewed as a geometric object:
+### 1. Row Picture
 
-- In 2 variables:  
-  Each equation represents a **line** in the x–y plane.
-- In 3 variables:  
-  Each equation represents a **plane** in 3D space.
+In the **row picture**, each row of the matrix \( A \) represents one equation.
+
+- In **2 variables**, each equation is a **line** in the \(x\)-\(y\) plane.
+- In **3 variables**, each equation is a **plane** in 3D space.
+- The solution corresponds to the **intersection** of all lines or planes.
+
+Geometric outcomes:
+- **Unique solution** → all objects intersect at a single point
+- **No solution** → parallel or inconsistent geometry
+- **Infinite solutions** → overlapping or dependent geometry
+
+This viewpoint aligns closely with elimination and consistency of equations.
+
+---
+
+### 2. Column Picture
+
+In the **column picture**, the same system is interpreted as a vector equation:
+
+\[
+x_1 a_1 + x_2 a_2 + \cdots + x_n a_n = b
+\]
+
+where \(a_1, a_2, \dots, a_n\) are the **columns of \(A\)**.
 
 From this perspective:
-- A **unique solution** corresponds to lines (or planes) intersecting at a single point.
-- **Infinite solutions** occur when lines coincide or planes intersect along a line.
-- **No solution** occurs when lines are parallel or planes do not share a common intersection.
+- The unknowns \(x_i\) are **weights**
+- The question becomes:  
+  *Can vector \(b\) be formed as a linear combination of the columns of \(A\)?*
 
-This interpretation aligns closely with ideas from elimination and consistency of equations.
+This view naturally introduces:
+- span
+- linear combinations
+- vector spaces
+- rank and dimension
 
 ---
 
-### Column Picture
+### 3. Matrix Picture
 
-In the **column picture**, the same system is interpreted differently.
+The matrix form \(A x = b\) compactly encodes all equations at once and is the foundation for computational methods such as Gaussian elimination.
 
-Instead of focusing on equations, we focus on **vectors**:
-- Each column of the matrix A is treated as a vector.
-- The solution represents a **linear combination of these column vectors** that produces the vector b.
-
-Geometrically:
-- The question becomes whether vector **b** lies in the span of the columns of A.
-- The solution variables act as weights that scale and combine the column vectors.
-
-This viewpoint is essential for understanding concepts such as:
-- vector spaces
-- span
-- linear combinations
-- rank and dimension
+Each **row** corresponds to one equation.  
+Each **column** corresponds to one variable across all equations.
 
 ---
 
@@ -59,53 +80,53 @@ This viewpoint is essential for understanding concepts such as:
 
 This program allows the user to:
 
-- Choose the number of equations (1, 2, or 3)
-- Enter the coefficients of the equations
-- Select whether to visualize:
-  - the **row picture**, or
-  - the **column picture**
-- See how the same linear system behaves geometrically in 2D or 3D
+- Choose the number of variables (from 1 up to 6)
+- Input a square system of linear equations
+- View **row picture** and **column picture simultaneously**
+- Observe how the same system behaves geometrically across dimensions
 
-The visualizations are intentionally kept simple so that the geometric intuition is clear and not hidden behind technical complexity.
+For dimensions higher than 3:
+- The **row picture** is shown as a 3D slice of higher-dimensional hyperplanes
+- The **column picture** is shown as a 3D projection (shadow) of vector combinations
 
 ---
 
-## Relation to Lecture Concepts
+## Why Both Pictures Matter
 
-The ideas visualized here connect directly to standard Linear Algebra theory, including:
+The **row picture** becomes difficult to interpret clearly beyond three dimensions, since intersections of hyperplanes cannot be visualized directly.
 
-- Conditions for **unique**, **infinite**, or **no solutions**
-- Intersection of lines and planes
-- Consistency of linear systems
-- Interpretation of solutions through geometry rather than algebra alone
+The **column picture**, however, scales naturally to higher dimensions:
+- It represents solutions as vector combinations
+- It allows projection of high-dimensional behavior into understandable geometric paths
 
-These concepts were introduced in foundational Linear Algebra lectures and are explored here visually to reinforce understanding.
+For this reason, the column picture plays a crucial role in understanding higher-dimensional systems, even when row-based geometry becomes abstract.
 
 ---
 
 ## About the Code
 
-This code was developed with support from external references and tools.  
-The purpose of the *computational explorations* folder is **not** to claim originality of implementation, but to create clear, working visual tools that help learners understand mathematical ideas that are often difficult to visualize.
+This code was developed with support from external references and tools.
 
-The emphasis is on:
-- clarity
+The purpose of the *computational explorations* in this repository is **not** to demonstrate original programming, but to create clear, working visualizations that help learners understand mathematical concepts that are otherwise difficult to see.
+
+The focus is on:
 - intuition
-- educational value
+- clarity
+- conceptual understanding
 
-If this program helps you *see* how equations interact in the x–y or x–y–z space, then it has served its purpose.
+If this program helps you visualize how equations interact in 2D, 3D, or higher-dimensional systems, then it has achieved its goal.
 
 ---
 
 ## Limitations
 
-- Visualizations are restricted to 2D and 3D
-- Higher-dimensional systems cannot be displayed geometrically
-- The program prioritizes intuition over mathematical completeness
+- Higher-dimensional systems are shown via projection, not exact geometry
+- Visual accuracy decreases as dimension increases
+- The goal is insight, not precision
 
 ---
 
 ## How to Use
 
-Run the Python file and follow the prompts in the terminal.  
-You will be guided through equation input and visualization selection step by step.
+Run the Python script and follow the prompts in the terminal.  
+The program will guide you through input and display both geometric interpretations side by side.
