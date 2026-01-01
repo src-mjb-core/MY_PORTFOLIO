@@ -48,9 +48,7 @@ This viewpoint aligns closely with elimination and consistency of equations.
 
 In the **column picture**, the same system is interpreted as a vector equation:
 
-\[
-x_1 a_1 + x_2 a_2 + \cdots + x_n a_n = b
-\]
+**x₁a₁ + x₂a₂ + … + xₙaₙ = b**
 
 where \(a_1, a_2, \dots, a_n\) are the **columns of \(A\)**.
 
