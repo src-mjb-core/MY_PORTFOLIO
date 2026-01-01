@@ -50,7 +50,7 @@ In the **column picture**, the same system is interpreted as a vector equation:
 
 **x₁a₁ + x₂a₂ + … + xₙaₙ = b**
 
-where \(a_1, a_2, \dots, a_n\) are the **columns of \(A\)**.
+where a₁, a₂...… aₙ are the **columns of \(A\)**.
 
 From this perspective:
 - The unknowns \(x_i\) are **weights**
